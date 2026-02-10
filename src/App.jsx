@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";                           
-import ClassProps from "./29_12/classprops";
+import ClassProps from "./29_12_25/classprops";
 import StateExample from "./30_12_25/class_state";
 import StringState from "./30_12_25/string_state";
 import RendorCond from "./30_12_25/rendor_cond";
-import Todolist from "./5_1/todolist";
-import ContactBook from "./6_1_25/contactbook";
-import Calculator from "./12_01/practice1";
+import Todolist from "./05_01_26/todolist";
+import ContactBook from "./06_01_26/contactbook";
+import Calculator from "./12_01_26/practice1";
 import Display123 from "./19_01_26/practice";
 import Hook1Example from "./20_01_26/hook1";
 import Hook2Example from "./20_01_26/hook2";
@@ -13,8 +13,7 @@ import UseState from "./21_01_26/uaeState3";
 import Todo from "./21_01_26/todo";
 import Ex from "./21_01_26/ex";
 import ContactBook2 from "./27_01_26/contactbook";
-import ShoppingCart from "./28_01_26/shoppingcart";
-
+import ShoppingCart from "./10_02_26/exercies";
 
 export default function App() {
   return (
