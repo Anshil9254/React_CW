@@ -13,6 +13,7 @@ import UseState from "./21_01_26/uaeState3";
 import Todo from "./21_01_26/todo";
 import Ex from "./21_01_26/ex";
 import ContactBook2 from "./27_01_26/contactbook";
+import ShoppingCart from "./28_01_26/shoppingcart";
 
 
 export default function App() {
@@ -60,8 +61,11 @@ export default function App() {
     // <>
     // <Ex />
     // </>
+    // <>
+    // <ContactBook2 />
+    // </>
     <>
-    <ContactBook2 />
+    <ShoppingCart />
     </>
   );
 }
