@@ -14,7 +14,7 @@ import Todo from "./21_01_26/todo";
 import Ex from "./21_01_26/ex";
 import ContactBook2 from "./27_01_26/contactbook";
 import ShoppingCart from "./10_02_26/exercies";
-
+import CartTheme from "./10_02_26/exercies2";
 export default function App() {
   return (
     // <>
@@ -63,8 +63,11 @@ export default function App() {
     // <>
     // <ContactBook2 />
     // </>
+    // <>
+    // <ShoppingCart />
+    // </>
     <>
-    <ShoppingCart />
+    CartTheam
     </>
   );
 }

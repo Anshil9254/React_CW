@@ -20,13 +20,11 @@ Requirements:
 import React, { useState } from 'react';
 
 export default function ShoppingCart() {
-    const [cart, setCart] = useState([]);
-    const [theme, setTheme] = useState("light");
-
-    // NEW: Controlled Inputs
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState("");
+    const [cart, setCart] = useState([]);
+    const [theme, setTheme] = useState("light");
 
     const addItem = () => {
         if (!name || isNaN(price) || isNaN(quantity)) return;
@@ -39,14 +37,13 @@ export default function ShoppingCart() {
 
         setCart([...cart, newItem]);
 
-        // Clear inputs
         setName("");
         setPrice("");
         setQuantity("");
     };
 
     const updateQuantity = (index, newQuantity) => {
-        if (newQuantity <= 0) return;   // prevent negative
+        if (newQuantity <= 0) return;   
 
         const updatedCart = cart.map((item, i) =>
             i === index ? { ...item, quantity: newQuantity } : item
@@ -62,7 +59,6 @@ export default function ShoppingCart() {
         setCart([]);
     };
 
-    // Improved toggle
     const toggleTheme = () => {
         setTheme(prev => prev === "light" ? "dark" : "light");
     };
@@ -80,11 +76,16 @@ export default function ShoppingCart() {
             borderRadius: "8px",
 
         }}>
-            <h2>Shopping Cart</h2>
+            <h2 style={{ textAlign: "center" }}>Shopping Cart</h2>
 
+            <div style={{float: 'right'}}>
             <button onClick={toggleTheme}>Toggle Theme</button>
-            <p>Current Theme: {theme}</p>
-
+            <br />
+            <p >Current Theme: {theme}</p>
+            <br />
+            </div>
+            <br />
+            <br />
             <input
                 type="text"
                 placeholder="Item Name"
@@ -109,21 +110,20 @@ export default function ShoppingCart() {
             <ul>
                 {cart.map((item, index) => (
                     <li key={index}>
+                        
                         {item.name} - Rs.{item.price} x {item.quantity} = Rs.{item.price * item.quantity}
 
-                        <button onClick={() => removeItem(index)}>Remove</button>
-
-                        <button onClick={() => {
-                            const newQty = parseInt(prompt("Enter new quantity:", item.quantity));
-                            if (!isNaN(newQty)) {
-                                updateQuantity(index, newQty);
-                            }
-                        }}>
-                            Update Quantity
-                        </button>
+                         &nbsp;&nbsp;
+                        <button onClick={() => updateQuantity(index, item.quantity - 1)}>-</button>
+                        &nbsp;&nbsp;{item.quantity}&nbsp;&nbsp;
+                        <button onClick={() => updateQuantity(index, item.quantity + 1)}>+</button>
+                         &nbsp;&nbsp;
+                        <button onClick={() => removeItem(index)}>Remove</button>   
                     </li>
                 ))}
             </ul>
+            
+            <hr />
             <div >
             <p>Subtotal: Rs.{subtotal.toFixed(2)}</p>
             <p>Tax (10%): Rs.{tax.toFixed(2)}</p>
